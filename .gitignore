@@ -1,0 +1,74 @@
+############################
+# Global ignores
+############################
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+
+############################
+# Node / Next.js
+############################
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Next.js build output
+frontend/out/
+
+############################
+# Java / Spring Boot
+############################
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/.idea/
+backend/*.iml
+
+# Maven
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/.mvn/wrapper/maven-wrapper.properties
+backend/mvnw
+backend/mvnw.cmd
+
+############################
+# Python / ML
+############################
+ml/__pycache__/
+ml/*.pyc
+ml/.ipynb_checkpoints/
+
+# Model artifacts (optional)
+# If you want to commit the model, remove this line
+ml/model.joblib
+
+############################
+# SQLite database
+############################
+# DO NOT commit the DB — Docker volume handles persistence
+backend/data/
+*.db
+*.sqlite
+*.sqlite3
+
+############################
+# Docker
+############################
+# Ignore local Docker build artifacts
+**/.dockerignore
+docker-compose.override.yml
+
+############################
+# OS / Editor files
+############################
+.vscode/
+.idea/
+*.orig
+*.bak

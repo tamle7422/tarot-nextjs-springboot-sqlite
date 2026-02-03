@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: tarot-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./ml:/app/ml
+      - backend_data:/app/data
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlite:/app/data/tarot.db
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: tarot-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  backend_data:
